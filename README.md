@@ -8,7 +8,7 @@ Project setup
 npx create-next-app .
 yarn add swr axios jotai
 ```
-Tailwind setup ↓
+Tailwind setup →
 https://tailwindcss.com/docs/guides/nextjs
 
 
