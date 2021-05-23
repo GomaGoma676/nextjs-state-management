@@ -1,7 +1,11 @@
-import '../styles/globals.css'
-
+import "../styles/globals.css";
+import { Provider } from "jotai";
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <Provider>
+      <Component {...pageProps} />
+    </Provider>
+  );
 }
 
-export default MyApp
+export default MyApp;

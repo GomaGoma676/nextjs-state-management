@@ -3,17 +3,15 @@ import useSWR from "swr";
 import { axiosFetcher } from "../utils/fetchFunc";
 import Layout from "../components/Layout";
 
-export default function Home() {
-  const { data, error } = useSWR("usersFetch", axiosFetcher, {
+const swrReadCache = () => {
+  const { data } = useSWR("usersFetch", axiosFetcher, {
     revalidateOnFocus: false,
-    revalidateOnMount: true,
+    revalidateOnMount: false,
   });
-  if (error) return <div>Error...</div>;
-  if (!data) return <div>Loading...</div>;
 
   return (
     <Layout>
-      <p className="mb-6 text-lg font-bold">Fetch by useSWR</p>
+      <p className="mb-6 text-lg font-bold">Reading cache by useSWR</p>
       <ul>
         {data?.map((user) => (
           <li key={user.id}>
@@ -23,11 +21,13 @@ export default function Home() {
           </li>
         ))}
       </ul>
-      <Link href="/swrReadCache">
-        <a className="mt-6 px-3 py-2 text-white bg-green-600 hover:bg-green-700 rounded">
-          Nav to ReadCache page
+      <Link href="/">
+        <a className="mt-6 px-3 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded">
+          Top page
         </a>
       </Link>
     </Layout>
   );
-}
+};
+
+export default swrReadCache;
