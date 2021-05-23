@@ -18,7 +18,7 @@ https://tailwindcss.com/docs/guides/nextjs
 - "Client state management" by Jotai
 
 This demo covers following simple use case 
-- Fetched data from Json placeholder in index page is accessed/used by other page. 
+- Fetched data from JSON placeholder in index page is accessed/used by other page. 
 - Read and write client state (isDark, selectedTask) from different components by "Jotai".
 
 
